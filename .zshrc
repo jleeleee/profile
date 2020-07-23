@@ -2,13 +2,13 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-  export ZSH="/home/jihyeongl/.oh-my-zsh"
+export ZSH="/home/jihyeongl/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="dst"
+ZSH_THEME="custom"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -63,7 +63,12 @@ ZSH_THEME="dst"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
+  archlinux
   git
+  history-substring-search
+  colored-man-pages
+  zsh-autosuggestions
+  zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -96,6 +101,11 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias data="cd ~/uva/current/ta/data;conda activate data"
+alias ai="cd ~/uva/current/ta/ai;conda activate ai"
+alias swedev="cd ~/uva/current/swedev/project-103-quicklearn;pipenv shell"
+
+#
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
 HISTSIZE=1000
@@ -109,3 +119,22 @@ zstyle :compinstall filename '/home/jihyeongl/.zshrc'
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
+
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/jihyeongl/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+#if [ $? -eq 0 ]; then
+#    eval "$__conda_setup"
+#else
+    if [ -f "/home/jihyeongl/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/jihyeongl/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/jihyeongl/anaconda3/bin:$PATH"
+    fi
+#fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+export LIBGL_ALWAYS_INDIRECT=1
+export DISPLAY=:0

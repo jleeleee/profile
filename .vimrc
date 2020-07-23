@@ -1,7 +1,7 @@
 syntax on
 
 " color dracula
-color vim-monokai-tasty
+color theme
 hi Normal guibg=NONE ctermbg=NONE
 
 filetype indent on
@@ -17,4 +17,4 @@ set softtabstop=4
 set autoindent
 set smarttab
 set number
-
+set vb
